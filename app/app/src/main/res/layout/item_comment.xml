@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/cardViewItemPlace"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_margin="10dip"
+  app:cardCornerRadius="5dip">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+      android:id="@+id/layline"
+      android:layout_width="match_parent"
+      android:layout_height="1dip"
+      android:layout_marginStart="16dp"
+      android:layout_marginLeft="16dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="16dp"
+      android:layout_marginRight="16dp"
+      android:background="@android:color/darker_gray"
+      android:orientation="horizontal"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/layname" />
+
+    <LinearLayout
+      android:id="@+id/layname"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center"
+      android:orientation="horizontal">
+
+      <TextView
+        android:id="@+id/txtCommentRate"
+        android:layout_width="36dip"
+        android:layout_height="36dip"
+        android:layout_marginLeft="5dip"
+        android:background="@color/colorGreen"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="4.0"
+        android:textColor="@color/colorWhite" />
+
+      <utility.RatingBar
+        android:id="@+id/ratingBarComment"
+        android:layout_width="126dip"
+        android:layout_height="24dip" />
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+      </LinearLayout>
+
+      <TextView
+        android:id="@+id/txtCommentUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="احسان ساربانی"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp" />
+
+      <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="36dip"
+        android:layout_height="36dip"
+        android:layout_marginRight="8dip"
+        android:tint="@color/colorGray"
+        app:srcCompat="@drawable/ic_person_white24dp"
+        tools:ignore="VectorDrawableCompat" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/layCommentList"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal"
+      app:layout_constraintBottom_toBottomOf="parent">
+      <co.lujun.androidtagview.TagContainerLayout
+         android:id="@+id/tagsView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:padding="10dp"
+        app:container_background_color="@color/transparent"
+        app:container_border_color="@color/transparent"
+        app:tag_border_color="@color/transparent"
+        app:tag_background_color="@color/colorGray"
+        app:tag_corner_radius="2dip"
+        app:tag_text_color="@color/colorWhite"
+        app:tag_horizontal_padding="2dip"
+        app:tag_vertical_padding="2dip"
+        app:container_enable_drag="false"
+        app:horizontal_interval="10dp"
+        app:vertical_interval="10dp"
+        app:tag_clickable="false"
+        app:tag_theme="none" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/constraintLayout4"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="8dp"
+      app:layout_constraintBottom_toTopOf="@id/layCommentList"
+      app:layout_constraintTop_toBottomOf="@id/layline">
+
+
+      <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:tint="@color/colorGray"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/ic_time_white_24dp"
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
+
+      <TextView
+        android:id="@+id/txtMultiComment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:gravity="right"
+        android:text="TextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/txtCommentDate"
+        app:layout_constraintTop_toBottomOf="@id/txtCommentDate" />
+
+      <TextView
+        android:id="@+id/txtCommentDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:text="TextView"
+        app:layout_constraintRight_toLeftOf="@id/imageView6"
+        tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

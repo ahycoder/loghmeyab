@@ -1,0 +1,20 @@
+<resources>
+  <string name="app_name">Restaurant</string>
+  <string name="loghmeyab">لقمه یاب</string>
+  <string name="select_whit_you">انتخاب با شماست</string>
+
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="place_is_closed">تعطیل است</string>
+  <string name="place_is_opened">سفارش می پذیرد</string>
+  <string name="order_is_lowwer_min">پایین تر از حداقل سفارش</string>
+  <string name="save_info_continue_pay">ثبت اطلاعات و پرداخت</string>
+  <string name="tooman">تومان</string>
+  <string name="title_activity_maps">Map</string>
+  <string name="i_am_here">من اینجا هستم</string>
+  <string name="select_location">مکان تحویل سفارش</string>
+  <string name="select_name">لطفا یک نام بنویسید</string>
+  <string name="select_phone_number">لطفا یک شماره همراه درست بنویسید</string>
+  <string name="select_address">لطفا یک آدرس دقیق بنویسید</string>
+  <string name="select_subject">لطفا عنوان محل را بنویسید</string>
+</resources>

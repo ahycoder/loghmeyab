@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="RoundedImageView">
+    <attr name="corner_radius" format="float" />
+    <attr name="make_circle" format="boolean" />
+  </declare-styleable>
+  <declare-styleable name="RatingBar">
+    <attr name="maxRating" format="integer" />
+    <attr name="rating" format="integer" />
+    <attr name="defaultDrawable" format="reference" />
+    <attr name="selectedDrawable" format="reference" />
+    <attr name="drawableWidth" format="dimension" />
+    <attr name="drawableHeight" format="dimension" />
+    <attr name="drawablePadding" format="dimension" />
+    <attr name="enable" format="boolean" />
+  </declare-styleable>
+  <attr format="string" name="fontPath"/>
+
+
+</resources>

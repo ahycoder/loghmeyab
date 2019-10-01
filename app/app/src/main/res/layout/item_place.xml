@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardViewItemPlace"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dip">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:padding="5dip">
+
+      <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+          android:id="@+id/itemPlaceImgLogo"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:srcCompat="@drawable/logo" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:layout_weight="0.7"
+        android:orientation="vertical">
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center_vertical"
+          android:orientation="horizontal">
+
+          <TextView
+            android:id="@+id/itemPlaceTxtName"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_weight="1"
+            android:text="نام مکان" />
+
+          <ImageView
+            android:layout_width="24dip"
+            android:layout_height="24dip"
+            android:tint="@color/colorGreen"
+            app:srcCompat="@drawable/ic_fork_spoon"
+            tools:ignore="VectorDrawableCompat" />
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center_vertical"
+          android:orientation="horizontal">
+
+          <TextView
+            android:id="@+id/itemPlaceTxtNumberOfComments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27 نظر " />
+
+          <utility.RatingBar
+            android:id="@+id/itemPlaceRatingBar"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            app:drawableHeight="24dip"
+            app:drawablePadding="4dp"
+            app:drawableWidth="24dip"
+            app:maxRating="5"
+            app:rating="4" />
+
+          <TextView
+            android:id="@+id/itemPlaceTxtRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGreen"
+            android:padding="8dp"
+            android:text="4.0"
+            android:textColor="@color/colorWhite" />
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center_vertical"
+          android:orientation="horizontal">
+
+          <TextView
+            android:id="@+id/itemPlaceTxtWorkTime"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_weight="1"
+            android:text="تایم کاری" />
+
+          <ImageView
+            android:layout_width="24dip"
+            android:layout_height="24dip"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/ic_time_white_24dp"
+            tools:ignore="VectorDrawableCompat" />
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center_vertical"
+          android:orientation="horizontal">
+
+          <TextView
+            android:id="@+id/itemPlaceTxtCourier"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_weight="1"
+            android:text="توضیحات پیک" />
+
+          <ImageView
+            android:layout_width="24dip"
+            android:layout_height="24dip"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/ic_bike"
+            tools:ignore="VectorDrawableCompat" />
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center_vertical"
+          android:orientation="horizontal">
+
+          <TextView
+            android:id="@+id/itemPlaceTxtAddress"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_weight="1"
+            android:text="ادرس و مکان" />
+
+          <ImageView
+            android:layout_width="24dip"
+            android:layout_height="24dip"
+            android:tint="@color/colorBlack"
+            app:srcCompat="@drawable/ic_location_on_white_24dp"
+            tools:ignore="VectorDrawableCompat" />
+
+        </LinearLayout>
+      </LinearLayout>
+    </LinearLayout>
+  </androidx.cardview.widget.CardView>

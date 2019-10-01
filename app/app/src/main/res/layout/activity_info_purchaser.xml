@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/colorMiniGray"
+  android:orientation="vertical"
+  tools:context="activity.infoPurchaser">
+
+  <include
+    layout="@layout/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+  <LinearLayout
+    android:id="@+id/layInfoOne"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dip"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <TextView
+      android:id="@+id/textView17"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="5dip"
+      android:gravity="right"
+      android:text="نام و نام خانوادگی دریافت کننده"
+      android:textColor="@color/colorBlack"
+      android:textSize="18sp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+      android:id="@+id/edtInfoName"
+      style="@style/editText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="5dip"
+      android:ems="10"
+      android:gravity="right"
+      android:hint="اینجا بنویسید"
+      android:inputType="textPersonName" />
+
+    <TextView
+      android:id="@+id/textView18"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="5dip"
+      android:layout_marginTop="20dip"
+      android:layout_marginRight="5dip"
+      android:layout_marginBottom="5dip"
+      android:gravity="right"
+      android:text="شماره تماس ضروری"
+      android:textColor="@color/colorBlack"
+      android:textSize="18sp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+      android:id="@+id/edtInfoPhoneNumber"
+      style="@style/editText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="5dip"
+      android:ems="10"
+      android:gravity="right"
+      android:hint="اینجا بنویسید"
+      android:inputType="textPersonName" />
+
+    <TextView
+      android:id="@+id/textView19"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="5dip"
+      android:layout_marginTop="20dip"
+      android:layout_marginRight="5dip"
+      android:layout_marginBottom="5dip"
+      android:gravity="right"
+      android:text="توضیحات"
+      android:textColor="@color/colorBlack"
+      android:textSize="18sp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+      android:id="@+id/edtInfiDesc"
+      style="@style/editText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="5dip"
+      android:gravity="top|right"
+      android:hint="اینجا بنویسید"
+      android:lines="8"
+      android:maxLines="10"
+      android:minLines="6"
+      android:scrollbars="vertical" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:orientation="vertical"></LinearLayout>
+
+    <TextView
+      android:id="@+id/textView20"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="5dip"
+      android:layout_marginTop="20dip"
+      android:layout_marginRight="5dip"
+      android:layout_marginBottom="5dip"
+      android:gravity="right"
+      android:text="کد تخفیف"
+      android:textColor="@color/colorBlack"
+      android:textSize="18sp" />
+
+    <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <TextView
+        android:id="@+id/txtInfoCheckOffCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginLeft="10dip"
+        android:background="@drawable/bg_green_rounded"
+        android:padding="8dip"
+        android:text="بررسی"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp" />
+
+      <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtInfoOffCode"
+        style="@style/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:ems="10"
+        android:gravity="right"
+        android:hint="کد را وارد و سپس بررسی کنید"
+        android:inputType="textPersonName" />
+    </FrameLayout>
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/layInfoTwo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dip"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    tools:visibility="gone">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="5dip"
+      android:gravity="right"
+      android:text="عنوان"
+      android:textColor="@color/colorBlack"
+      android:textSize="18sp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+      android:id="@+id/edtInfoSubject"
+      style="@style/editText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="5dip"
+      android:ems="10"
+      android:gravity="right"
+      android:hint="عنوان محل مانند منزل یا شرکت"
+      android:inputType="textPersonName" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="5dip"
+      android:layout_marginTop="20dip"
+      android:layout_marginRight="5dip"
+      android:layout_marginBottom="5dip"
+      android:gravity="right"
+      android:text="آدرس دقیق"
+      android:textColor="@color/colorBlack"
+      android:textSize="18sp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+      android:id="@+id/edtInfoiAddress"
+      style="@style/editText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="5dip"
+      android:gravity="top|right"
+      android:hint="آدرس دقیق محل مورد نظر به همراه جزییات"
+      android:lines="8"
+      android:maxLines="10"
+      android:minLines="6"
+      android:scrollbars="vertical" />
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/layContinue"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorGreen"
+    android:orientation="vertical">
+
+    <TextView
+      android:id="@+id/txtContinue"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:padding="12dip"
+      android:text="@string/save_info_continue_pay"
+      android:textColor="@color/colorWhite"
+      android:textSize="18sp" />
+  </LinearLayout>
+</LinearLayout>
