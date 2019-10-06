@@ -11,6 +11,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 import ir.yousefi.restaurant.R;
 
@@ -25,8 +26,9 @@ public class MainAdapterViewPager extends PagerAdapter {
 
     Bitmap bitmap ;
 
+  @NonNull
   @Override
-  public Object instantiateItem(ViewGroup collection, final int position) {
+  public Object instantiateItem(@NonNull ViewGroup collection, final int position) {
     LayoutInflater inflater = LayoutInflater.from(context);
     ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.item_main_view_pager, collection, false);
     ImageView imageView=layout.findViewById(R.id.imgMainViewPager);
@@ -37,7 +39,7 @@ public class MainAdapterViewPager extends PagerAdapter {
   }
 
   @Override
-  public void destroyItem(ViewGroup collection, int position, Object view) {
+  public void destroyItem(ViewGroup collection, int position, @NonNull Object view) {
     collection.removeView((View) view);
   }
 
@@ -47,7 +49,7 @@ public class MainAdapterViewPager extends PagerAdapter {
   }
 
   @Override
-  public boolean isViewFromObject(View view, Object object) {
+  public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
     return view == object;
   }
 

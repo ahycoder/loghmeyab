@@ -1,5 +1,10 @@
 package webservice;
 
+
+import com.google.gson.JsonObject;
+
+import org.json.JSONArray;
+
 import java.util.List;
 
 import model.StructComment;
@@ -34,6 +39,10 @@ public interface Api {
   @POST("first")
   @FormUrlEncoded
   Call<List<StructComment>> getCommentsOfPlace(@Field("Key")String key, @Field("place_id")String id);
+
+  @POST("first")
+  @FormUrlEncoded
+  Call<JsonObject> goToPay(@Field("Key")String key, @Field("place_id")int placeId, @Field("json_purchase") JSONArray jsonArray);
 
 
 }

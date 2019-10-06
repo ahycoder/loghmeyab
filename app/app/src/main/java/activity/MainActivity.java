@@ -11,22 +11,23 @@ import java.util.List;
 
 import adapter.AdapterPlaces;
 import adapter.AdapterTypeFoods;
+import adapter.MainAdapterViewPager;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
-import adapter.MainAdapterViewPager;
 import ir.yousefi.restaurant.R;
 import model.StructPlace;
 import model.StructTypeFood;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import utility.Constant;
 import webservice.Api;
 import webservice.ApiClient;
 
-public class MainActivity extends ActivityEnhanced {
+public class MainActivity extends EnhancedActivity {
   private RecyclerView recyclerMainPlacesOffer,recyclerMainPlacesNew,recyclerMainPlacesOff,recyclerMainPlacesProgressSuccessful,recyclerMainTypesFood;
   private AdapterPlaces adapterPlaces;
   private AdapterTypeFoods adapterTypeFoods;
@@ -36,6 +37,9 @@ public class MainActivity extends ActivityEnhanced {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+
+
     recyclerMainPlacesOffer =findViewById(R.id.recyclerMainPlacesOffer);
     recyclerMainPlacesNew =findViewById(R.id.recyclerMainPlacesNew);
     recyclerMainPlacesOff =findViewById(R.id.recyclerMainPlacesOff);
@@ -70,8 +74,8 @@ public class MainActivity extends ActivityEnhanced {
       @Override
       public void onClick(View view) {
         view.getTag();
-        Intent intent= new Intent(MainActivity.this,ListPlaceActivity.class);
-        intent.putExtra("kind",view.getTag().toString());
+        Intent intent= new Intent(MainActivity.this, ListPlaceActivity.class);
+        intent.putExtra(Constant.KEY_INTENT_kind_FOOD,view.getTag().toString());
         MainActivity.this.startActivity(intent);
       }
     };

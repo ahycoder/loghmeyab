@@ -1,5 +1,6 @@
 package adapter;
 
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,7 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.ViewHold
   }
 
   @Override
-  public void onBindViewHolder(@NonNull AdapterComment.ViewHolder holder, int position) {
+  public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
        final StructComment comment =list.get(position);
        holder.txtCommentUserName.setText(comment.getUserName());
        holder.txtCommentRate.setText(comment.getRate()+"");
@@ -50,7 +51,9 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.ViewHold
        tags.add(array.get(i).toString());
      }
       holder.tagsView.setTags(tags);
-     holder.tagsView.setTagTextDirection(View.TEXT_DIRECTION_RTL);
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+        holder.tagsView.setTagTextDirection(View.TEXT_DIRECTION_RTL);
+      }
 
     } catch (JSONException e) {
       e.printStackTrace();

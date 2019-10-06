@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/colorMiniGray"
+  android:orientation="vertical"
+  tools:context="activity.FactorActivity">
+
+  <include
+    layout="@layout/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+  <androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:fillViewport="true">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="200dip"
+        app:srcCompat="@drawable/pay" />
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:background="@drawable/bg_white_rounded"
+        android:orientation="horizontal">
+
+        <TextView
+          android:id="@+id/txtFactoreName"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="10dip"
+          android:text="TextView"
+          android:textColor="@color/colorBlack" />
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:orientation="horizontal"></LinearLayout>
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginRight="5dip"
+          android:text="مشخصات" />
+
+        <ImageView
+          android:layout_width="24dip"
+          android:layout_height="24dip"
+          android:layout_marginRight="5dip"
+          android:tint="@color/colorGray"
+          app:srcCompat="@drawable/ic_person_white24dp"
+          tools:ignore="VectorDrawableCompat" />
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:background="@drawable/bg_white_rounded"
+        android:orientation="horizontal">
+
+        <TextView
+          android:id="@+id/txtFactoreUserPhone"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="10dip"
+          android:text="TextView"
+          android:textColor="@color/colorBlack" />
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:orientation="horizontal"></LinearLayout>
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginRight="5dip"
+          android:text="شماره کاربر" />
+
+        <ImageView
+          android:layout_width="24dip"
+          android:layout_height="24dip"
+          android:layout_marginRight="5dip"
+          android:tint="@color/colorGray"
+          app:srcCompat="@drawable/ic_person_white24dp"
+          tools:ignore="VectorDrawableCompat" />
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:background="@drawable/bg_white_rounded"
+        android:orientation="horizontal">
+
+        <TextView
+          android:id="@+id/txtFactoreReciverPhone"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="10dip"
+          android:text="TextView"
+          android:textColor="@color/colorBlack" />
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:orientation="horizontal"></LinearLayout>
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginRight="5dip"
+          android:text="شماره تحویل گیرنده" />
+
+        <ImageView
+          android:layout_width="24dip"
+          android:layout_height="24dip"
+          android:layout_marginRight="5dip"
+          android:tint="@color/colorGray"
+          app:srcCompat="@drawable/ic_person_white24dp"
+          tools:ignore="VectorDrawableCompat" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:background="@drawable/bg_white_rounded"
+        android:orientation="vertical">
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="right"
+          android:orientation="horizontal">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:text="آدرس دقیق محل تحویل" />
+
+          <ImageView
+            android:layout_width="24dip"
+            android:layout_height="24dip"
+            android:layout_marginRight="5dip"
+            android:tint="@color/colorGray"
+            app:srcCompat="@drawable/ic_location_on_white_24dp"
+            tools:ignore="VectorDrawableCompat" />
+        </LinearLayout>
+
+        <TextView
+          android:id="@+id/txtFactoreAddress"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="right"
+          android:layout_marginLeft="10dip"
+          android:layout_marginRight="10dip"
+          android:gravity="right"
+          android:lines="8"
+          android:maxLines="10"
+          android:minLines="6"
+          android:text="TextView"
+          android:textColor="@color/colorBlack" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:background="@drawable/bg_white_rounded"
+        android:orientation="vertical">
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_margin="8dip"
+          android:layout_weight="1"
+          android:orientation="horizontal">
+
+          <TextView
+            android:id="@+id/txtFactorePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="TextView"
+            android:textColor="@color/colorBlack" />
+
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"></LinearLayout>
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:text="مبلغ سفارش" />
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_margin="8dip"
+          android:layout_weight="1"
+          android:orientation="horizontal">
+
+          <TextView
+            android:id="@+id/txtFactoreOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="TextView"
+            android:textColor="@color/colorBlack" />
+
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"></LinearLayout>
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:text="مبلغ تخفیف" />
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_margin="8dip"
+          android:layout_weight="1"
+          android:orientation="horizontal">
+
+          <TextView
+            android:id="@+id/txtFactoreCostCourier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="TextView"
+            android:textColor="@color/colorBlack" />
+
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"></LinearLayout>
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:text="هزینه پیک" />
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dip"
+          android:layout_weight="1"
+          android:orientation="horizontal">
+
+          <TextView
+            android:id="@+id/txtFactoreFinalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="مبلغ قابل پرداخت"
+            android:textColor="@color/colorBlack" />
+
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"></LinearLayout>
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:text="شماره کاربر" />
+        </LinearLayout>
+
+      </LinearLayout>
+
+    </LinearLayout>
+  </androidx.core.widget.NestedScrollView>
+
+  <LinearLayout
+    android:id="@+id/layFactorePay"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorGreen"
+    android:orientation="vertical">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:padding="12dip"
+      android:text="@string/save_info_continue_pay"
+      android:textColor="@color/colorWhite"
+      android:textSize="18sp" />
+  </LinearLayout>
+
+</LinearLayout>

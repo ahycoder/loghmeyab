@@ -3,7 +3,6 @@ package activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -17,9 +16,10 @@ import ir.yousefi.restaurant.G;
 import ir.yousefi.restaurant.R;
 import model.StructFood;
 import model.StructPlace;
+import utility.Constant;
 import utility.utilityPurchase;
 
-public class PurchasesActivity extends ActivityEnhanced {
+public class ListPurchasesActivity extends EnhancedActivity {
 
   private TextView txtPurchasesWohleCount,txtPurchasesWohlePriceOrder,txtPurchasesWholeOffPrice,txtPurchasesFactorePrice,txtPurchaseComtinuOrMinOrder;
   private LinearLayout layPurchaseComtinuOrMinOrder;
@@ -33,13 +33,12 @@ public class PurchasesActivity extends ActivityEnhanced {
     setContentView(R.layout.activity_purchases);
     Bundle bundle =getIntent().getExtras();
     if (bundle !=null){
-      Parcelable[] parcelables =bundle.getParcelableArray("Purchases");
-      for (int i=0;i<parcelables.length;i++){
-            list.add((StructFood)parcelables[i]);
+      Parcelable[] parcelables =bundle.getParcelableArray(Constant.KEY_INTENT_LIST_PURCACE);
+      for (Parcelable parcelable : parcelables) {
+        list.add((StructFood) parcelable);
       }
-      place =bundle.getParcelable("place");
-      Log.i("TAG","min :"+place.getMinOrder());
-      wohleCount=bundle.getInt("WohleCount");
+      place =bundle.getParcelable(Constant.KEY_INTENT_PLACE);
+      wohleCount=bundle.getInt(Constant.KEY_INTENT_WOHLE_COUNT_LIST_FOOD);
     }
     initView();
     txtPurchasesFactorePrice.setText(utilityPurchase.getFactorPrice(list)+getResources().getString(R.string.tooman));
@@ -62,7 +61,7 @@ public class PurchasesActivity extends ActivityEnhanced {
               e.printStackTrace();
             }
             Intent intent = new Intent(G.currentActivity, PlaceActivity.class);
-            intent.putExtra("place",place);
+            intent.putExtra(Constant.KEY_INTENT_PLACE,place);
             G.currentActivity.startActivity(intent);
             finish();
           }else {
@@ -88,9 +87,9 @@ public class PurchasesActivity extends ActivityEnhanced {
     layPurchaseComtinuOrMinOrder.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Intent intent= new Intent(G.currentActivity, MapsActivity.class);
-        intent.putExtra("place",place);
-        intent.putExtra("purchaseFoods",list);
+        Intent intent= new Intent(G.currentActivity, InfoPurchaserActivity.class);
+        intent.putExtra(Constant.KEY_INTENT_PLACE,place);
+        intent.putExtra(Constant.KEY_INTENT_LIST_PURCACE,utilityPurchase.getPurchases(list));
         G.currentActivity.startActivity(intent);
       }
     });
@@ -114,8 +113,8 @@ public class PurchasesActivity extends ActivityEnhanced {
   @Override
   public void onBackPressed() {
     Intent intent = new Intent(G.currentActivity, PlaceActivity.class);
-    intent.putExtra("place",place);
-    intent.putExtra("purchaseFoods",list);
+    intent.putExtra(Constant.KEY_INTENT_PLACE,place);
+    intent.putExtra(Constant.KEY_INTENT_LIST_PURCACE,list);
     G.currentActivity.startActivity(intent);
     finish();
   }

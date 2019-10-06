@@ -67,9 +67,6 @@ public class AdapterFood extends RecyclerView.Adapter<AdapterFood.ViewHolder>  {
             if (listener != null){
               listener.onSelectedFood(food,count);
             }
-            if (count>0){
-
-            }
           }
         });
 

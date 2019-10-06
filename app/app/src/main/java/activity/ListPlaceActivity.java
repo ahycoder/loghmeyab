@@ -1,6 +1,7 @@
 package activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ import model.StructPlace;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import utility.Constant;
 import webservice.Api;
 import webservice.ApiClient;
 
@@ -27,7 +29,7 @@ public class ListPlaceActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_list_place);
         Bundle bundle =getIntent().getExtras();
-        String kind =bundle.getString("kind");
+        String kind =bundle.getString(Constant.KEY_INTENT_kind_FOOD);
         recyclerPlace =findViewById(R.id.recyclerPlace);
         recyclerPlace.setLayoutManager(new LinearLayoutManager(this));
         ((TextView)findViewById(R.id.txtToolbarTitle)).setText(getResources().getString(R.string.select_whit_you));
@@ -41,6 +43,7 @@ public class ListPlaceActivity extends AppCompatActivity {
         ApiClient.getClient().create(Api.class).getPlaces("Places_Kinds", kind).enqueue(new Callback<List<StructPlace>>() {
           @Override
           public void onResponse(Call<List<StructPlace>> call, Response<List<StructPlace>> response) {
+            Log.i("TAG","onResponse:"+response.code()+"     body:"+response.body());
             if (response.isSuccessful()) {
               if (response.body() != null && response.body().size() > 0) {
                 adapterPlaces = new AdapterPlaces(response.body(),R.layout.item_place);
@@ -52,6 +55,7 @@ public class ListPlaceActivity extends AppCompatActivity {
 
           @Override
           public void onFailure(Call<List<StructPlace>> call, Throwable t) {
+            Log.i("TAG","onFailure:"+t.getMessage()+"     t:"+t.getLocalizedMessage());
           }
         });
   }

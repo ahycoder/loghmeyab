@@ -1,7 +1,6 @@
 package adapter;
 
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import ir.yousefi.restaurant.G;
 import ir.yousefi.restaurant.R;
 import model.StructPlace;
+import utility.Constant;
 import utility.RatingBar;
 
 public class AdapterPlaces extends RecyclerView.Adapter<AdapterPlaces.ViewHolder>  {
@@ -33,9 +33,7 @@ public class AdapterPlaces extends RecyclerView.Adapter<AdapterPlaces.ViewHolder
   @Override
   public AdapterPlaces.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
     View itemView = LayoutInflater.from(parent.getContext()).inflate(layoutItem, parent, false);
-
-    ViewHolder viewHolder = new ViewHolder(itemView);
-    return viewHolder;
+    return new ViewHolder(itemView);
   }
 
   @Override
@@ -45,16 +43,27 @@ public class AdapterPlaces extends RecyclerView.Adapter<AdapterPlaces.ViewHolder
        holder.itemPlaceTxtNumberOfComments.setText(place.getNumberOfComments()+"");
        holder.itemPlaceTxtRate.setText((place.getPoints()/(float)(place.getNumberOfComments()))+"");
        holder.itemPlaceTxtWorkTime.setText(place.getTimeWork());
-       holder.itemPlaceTxtCourier.setText(place.getCourier());
+       String  courierKm;
+       String  courierPrice;
+       if (place.getCourierKm()==0) {
+         courierKm=G.currentActivity.getResources().getString(R.string.overall);
+       }else {
+         courierKm=" تا "+place.getCourierKm() +G.currentActivity.getResources().getString(R.string.kilometr);
+       }
+       if (place.getCourierPrice()==0){
+         courierPrice=G.currentActivity.getResources().getString(R.string.free);
+       }else {
+         courierPrice=place.getCourierPrice() +G.currentActivity.getResources().getString(R.string.tooman);
+       }
+       holder.itemPlaceTxtCourier.setText(courierKm + courierPrice);
        holder.itemPlaceTxtAddress.setText(place.getAddress());
        holder.itemPlaceRatingBar.setRating(place.getPoints()/place.getNumberOfComments());
        holder.itemPlaceRatingBar.setEnable(false);
-       Log.i("TAG",place.getName()+" ->isActive:"+place.getActive());
        holder.cardViewItemPlace.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
            Intent intent= new Intent(G.currentActivity, PlaceActivity.class);
-           intent.putExtra("place",place);
+           intent.putExtra(Constant.KEY_INTENT_PLACE,place);
            G.currentActivity.startActivity(intent);
          }
        });

@@ -1,4 +1,4 @@
-package activity;
+package fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import adapter.AdapterFood;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,7 +19,7 @@ import ir.yousefi.restaurant.R;
 import model.StructFood;
 
 
-public class PlacefoodFragment extends Fragment {
+public class FragmentPlacefood extends Fragment {
 
   public interface onFragmentFoodListener{
     void onFoodListener(StructFood food,int number);
@@ -34,10 +35,10 @@ public class PlacefoodFragment extends Fragment {
   private RecyclerView recyclerFragmentPlaceFood;
   private AdapterFood adapterFood;
   private boolean isActivePlace;
-  public PlacefoodFragment() { }
+  public FragmentPlacefood() { }
 
-  public static PlacefoodFragment newInstance(ArrayList<StructFood> list,String title,boolean isActivePlace,ArrayList<StructFood> purchaseFoods) {
-    PlacefoodFragment fragment = new PlacefoodFragment();
+  public static FragmentPlacefood newInstance(ArrayList<StructFood> list, String title, boolean isActivePlace, ArrayList<StructFood> purchaseFoods) {
+    FragmentPlacefood fragment = new FragmentPlacefood();
     Bundle args = new Bundle();
     args.putParcelableArrayList(ARG_PARAM1,list);
     args.putString(ARG_PARAM2,title);
@@ -59,7 +60,7 @@ public class PlacefoodFragment extends Fragment {
   }
 
   @Override
-  public View onCreateView(LayoutInflater inflater, ViewGroup container,
+  public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                            Bundle savedInstanceState) {
     if (purchaseFoods != null) Log.i("TAG","fragment purchaseFoods size:"+purchaseFoods.size());
     View root =inflater.inflate(R.layout.fragment_placefood, container, false);
@@ -84,7 +85,7 @@ public class PlacefoodFragment extends Fragment {
     return root;
   }
   @Override
-  public void onAttach(Context context) {
+  public void onAttach(@NonNull Context context) {
     super.onAttach(context);
     if (context instanceof onFragmentFoodListener) {
       mListener = (onFragmentFoodListener) context;

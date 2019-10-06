@@ -21,6 +21,7 @@ import java.util.Set;
 import adapter.AdapterComment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import fragment.FragmentPlacefood;
 import ir.yousefi.restaurant.G;
 import ir.yousefi.restaurant.R;
 import model.StructComment;
@@ -29,6 +30,7 @@ import model.StructPlace;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import utility.Constant;
 import utility.RatingBar;
 import utility.UTabPlaceFood;
 import utility.utilityPurchase;
@@ -36,7 +38,7 @@ import webservice.Api;
 import webservice.ApiClient;
 
 
-public class PlaceActivity extends ActivityEnhanced implements PlacefoodFragment.onFragmentFoodListener {
+public class PlaceActivity extends EnhancedActivity implements FragmentPlacefood.onFragmentFoodListener {
   private UTabPlaceFood uTab;
   private boolean isActive;
   private TextView plcaeTxtTimeReady, plcaeTxtMinOrder,plcaeTxtCourier,plcaeTxtNumberOfComments,plcaeTxtIsActive,plcaeTxtRate,txtStartBuyWholePrice;
@@ -54,16 +56,29 @@ public class PlaceActivity extends ActivityEnhanced implements PlacefoodFragment
 
 
     Bundle bundle =getIntent().getExtras();
-    final StructPlace place =bundle.getParcelable("place");
-    if (bundle.getParcelableArrayList("purchaseFoods") != null){
-        foodsPurchase =bundle.getParcelableArrayList("purchaseFoods");
+    final StructPlace place =bundle.getParcelable(Constant.KEY_INTENT_PLACE);
+    if (bundle.getParcelableArrayList(Constant.KEY_INTENT_LIST_PURCACE) != null){
+        foodsPurchase =bundle.getParcelableArrayList(Constant.KEY_INTENT_LIST_PURCACE);
         handelListPurchaseAndShowInLayStartBuyed(foodsPurchase);
     }else{
       foodsPurchase=new ArrayList<>();
     }
     plcaeTxtTimeReady.setText(place.getTimeReady());
     plcaeTxtMinOrder.setText(place.getMinOrder()+"");
-    plcaeTxtCourier.setText(place.getCourier());
+
+    String  courierKm;
+    String  courierPrice;
+    if (place.getCourierKm()==0) {
+      courierKm=G.currentActivity.getResources().getString(R.string.overall);
+    }else {
+      courierKm=" تا "+place.getCourierKm() +G.currentActivity.getResources().getString(R.string.kilometr);
+    }
+    if (place.getCourierPrice()==0){
+      courierPrice=G.currentActivity.getResources().getString(R.string.free);
+    }else {
+      courierPrice=place.getCourierPrice() +G.currentActivity.getResources().getString(R.string.tooman);
+    }
+    plcaeTxtCourier.setText(courierKm + courierPrice);
     plcaeTxtNumberOfComments.setText(place.getNumberOfComments()+" نظر ");
 
     if (place.getActive() == 0){
@@ -154,10 +169,10 @@ public class PlaceActivity extends ActivityEnhanced implements PlacefoodFragment
         if(utilityPurchase.getFactorPrice(foodsPurchase)<place.getMinOrder()){
           Toast.makeText(G.currentActivity,getResources().getString(R.string.order_is_lowwer_min)+"",Toast.LENGTH_SHORT).show();
         }else{
-          Intent intent= new Intent(G.currentActivity, PurchasesActivity.class);
-          intent.putExtra("Purchases",utilityPurchase.getPurchases(foodsPurchase));
-          intent.putExtra("place",place);
-          intent.putExtra("WohleCount",utilityPurchase.getWohleCount(foodsPurchase));
+          Intent intent= new Intent(G.currentActivity, ListPurchasesActivity.class);
+          intent.putExtra(Constant.KEY_INTENT_LIST_PURCACE,utilityPurchase.getPurchases(foodsPurchase));
+          intent.putExtra(Constant.KEY_INTENT_PLACE,place);
+          intent.putExtra(Constant.KEY_INTENT_WOHLE_COUNT_LIST_FOOD,utilityPurchase.getWohleCount(foodsPurchase));
           G.currentActivity.startActivity(intent);
           finish();
         }

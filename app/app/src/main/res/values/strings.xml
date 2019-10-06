@@ -12,9 +12,18 @@
   <string name="tooman">تومان</string>
   <string name="title_activity_maps">Map</string>
   <string name="i_am_here">من اینجا هستم</string>
-  <string name="select_location">مکان تحویل سفارش</string>
+  <string name="select_location"> لطفا مکان تحویل سفارش را انتخاب کنید</string>
+  <string name="select_location_tollbar">مکان تحویل سفارش</string>
   <string name="select_name">لطفا یک نام بنویسید</string>
   <string name="select_phone_number">لطفا یک شماره همراه درست بنویسید</string>
   <string name="select_address">لطفا یک آدرس دقیق بنویسید</string>
   <string name="select_subject">لطفا عنوان محل را بنویسید</string>
+  <string name="select_one_case">لطفا یک مورد را انتخاب کنید</string>
+  <string name="free">رایگان</string>
+  <string name="overall">سرتاسر</string>
+  <string name="kilometr">کیلومتر</string>
+  <string name="select_location_in_range_place">لطفا در محدوده انتخاب کنید</string>
+  <string name="closed">تعطیل شد</string>
+  <string name="change_your_list_purchase">لیست شما تغییر یافت</string>
+  <string name="error_for_pay">در پرداخت مشکل ایجاد شده است دقایقی دیگر تلاش کنید</string>
 </resources>

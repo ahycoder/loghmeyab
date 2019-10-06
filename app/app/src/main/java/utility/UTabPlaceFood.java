@@ -7,7 +7,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import activity.PlacefoodFragment;
+import fragment.FragmentPlacefood;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -94,7 +94,7 @@ import model.StructFood;
     @Override
     public Fragment getItem(int position) {
 
-      return PlacefoodFragment.newInstance(items.get(position).list,items.get(position).title,items.get(position).isActive,items.get(position).purchaseFoods);
+      return FragmentPlacefood.newInstance(items.get(position).list,items.get(position).title,items.get(position).isActive,items.get(position).purchaseFoods);
     }
 
     public Item getRawItem(int position) {

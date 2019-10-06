@@ -21,8 +21,11 @@ public class StructPlace implements Parcelable {
   @SerializedName("place_logo_url")
   private String logoUrl;
 
-  @SerializedName("place_courier")
-  private String courier;
+  @SerializedName("place_courier_km")
+  private int courierKm;
+
+  @SerializedName("place_courier_price")
+  private int courierPrice;
 
   @SerializedName("place_time_work")
   private String timeWork;
@@ -30,8 +33,11 @@ public class StructPlace implements Parcelable {
   @SerializedName("place_address")
   private String address;
 
-  @SerializedName("place_geo")
-  private String geo;
+  @SerializedName("place_location_lat")
+  private double lat;
+
+  @SerializedName("place_location_lng")
+  private double lng;
 
   @SerializedName("place_is_active")
   private int isActive;
@@ -52,46 +58,25 @@ public class StructPlace implements Parcelable {
   private String date;
 
 
+
   protected StructPlace(Parcel in) {
     id = in.readInt();
     kindId = in.readInt();
     name = in.readString();
     kindName = in.readString();
     logoUrl = in.readString();
-    courier = in.readString();
+    courierKm = in.readInt();
+    courierPrice = in.readInt();
     timeWork = in.readString();
     address = in.readString();
-    geo = in.readString();
+    lat = in.readDouble();
+    lng = in.readDouble();
     isActive = in.readInt();
     numberOfComments = in.readInt();
     points = in.readInt();
     minOrder = in.readInt();
     timeReady = in.readString();
     date = in.readString();
-  }
-
-  @Override
-  public void writeToParcel(Parcel dest, int flags) {
-    dest.writeInt(id);
-    dest.writeInt(kindId);
-    dest.writeString(name);
-    dest.writeString(kindName);
-    dest.writeString(logoUrl);
-    dest.writeString(courier);
-    dest.writeString(timeWork);
-    dest.writeString(address);
-    dest.writeString(geo);
-    dest.writeInt(isActive);
-    dest.writeInt(numberOfComments);
-    dest.writeInt(points);
-    dest.writeInt(minOrder);
-    dest.writeString(timeReady);
-    dest.writeString(date);
-  }
-
-  @Override
-  public int describeContents() {
-    return hashCode();
   }
 
   public static final Creator<StructPlace> CREATOR = new Creator<StructPlace>() {
@@ -146,13 +131,13 @@ public class StructPlace implements Parcelable {
     this.logoUrl = logoUrl;
   }
 
-  public String getCourier() {
-    return courier;
-  }
+  public int getCourierKm() { return courierKm; }
 
-  public void setCourier(String courier) {
-    this.courier = courier;
-  }
+  public void setCourierKm(int courierKm) { this.courierKm = courierKm; }
+
+  public int getCourierPrice() { return courierPrice; }
+
+  public void setCourierPrice(int courierPrice) { this.courierPrice = courierPrice; }
 
   public String getTimeWork() {
     return timeWork;
@@ -170,12 +155,20 @@ public class StructPlace implements Parcelable {
     this.address = address;
   }
 
-  public String getGeo() {
-    return geo;
+  public double getLat() {
+    return lat;
   }
 
-  public void setGeo(String geo) {
-    this.geo = geo;
+  public void setLat(double lat) {
+    this.lat = lat;
+  }
+
+  public double getLng() {
+    return lng;
+  }
+
+  public void setLng(double lng) {
+    this.lng = lng;
   }
 
   public int getActive() {
@@ -190,9 +183,7 @@ public class StructPlace implements Parcelable {
     return numberOfComments;
   }
 
-  public void setNumberOfComments(int numberOfComments) {
-    this.numberOfComments = numberOfComments;
-  }
+  public void setNumberOfComments(int numberOfComments) { this.numberOfComments = numberOfComments; }
 
   public int getPoints() {
     return points;
@@ -224,5 +215,31 @@ public class StructPlace implements Parcelable {
 
   public void setDate(String date) {
     this.date = date;
+  }
+
+  @Override
+  public int describeContents() {
+    return hashCode();
+  }
+
+  @Override
+  public void writeToParcel(Parcel dest, int flags) {
+    dest.writeInt(id);
+    dest.writeInt(kindId);
+    dest.writeString(name);
+    dest.writeString(kindName);
+    dest.writeString(logoUrl);
+    dest.writeInt(courierKm);
+    dest.writeInt(courierPrice);
+    dest.writeString(timeWork);
+    dest.writeString(address);
+    dest.writeDouble(lat);
+    dest.writeDouble(lng);
+    dest.writeInt(isActive);
+    dest.writeInt(numberOfComments);
+    dest.writeInt(points);
+    dest.writeInt(minOrder);
+    dest.writeString(timeReady);
+    dest.writeString(date);
   }
 }

@@ -29,6 +29,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'co.lujun:androidtagview:1.1.7'
     implementation 'com.allenliu.badgeview:library:1.1.1'
-
+    implementation 'co.ronash.android:pushe-base:1.6.3'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.github.ahycoder:baseLib:0.0.1'
 }

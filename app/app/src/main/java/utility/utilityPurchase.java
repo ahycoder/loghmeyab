@@ -13,7 +13,7 @@ public class utilityPurchase {
     for (StructFood food : list) {
       int price = 0;
       if (food.getOff() > 0) {
-        price = food.getCountBuyed() * food.getOff();
+        price = food.getCountBuyed() * (food.getPrice()-food.getOff());
       } else {
         price = food.getCountBuyed() * food.getPrice();
       }
@@ -31,7 +31,7 @@ public class utilityPurchase {
   public static int getOffPrice(ArrayList<StructFood> list){
     int offPrice=0;
     for (StructFood food : list) {
-      offPrice += food.getCountBuyed() * (food.getPrice()-food.getOff());
+      offPrice += food.getCountBuyed() * food.getOff();
     }
     return offPrice;
   }

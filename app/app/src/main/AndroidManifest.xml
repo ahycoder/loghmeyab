@@ -10,26 +10,27 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
-
-    <activity
-      android:name="activity.MapsActivity">
-
+    <activity android:name="activity.FactorActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="http"/>
+      </intent-filter>
     </activity>
-    <activity android:name="activity.infoPurchaser" />
-    <activity android:name="activity.PurchasesActivity" />
+    <activity android:name="activity.InfoPurchaserActivity"/>
+    <activity android:name="activity.ListPurchasesActivity" />
     <activity android:name="activity.PlaceActivity" />
     <activity android:name="activity.ListPlaceActivity" />
+    <activity android:name="activity.EnhancedActivity" />
     <activity android:name="activity.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
-
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:name="activity.ActivityEnhanced" />
-    <meta-data
-      android:name="com.google.android.geo.API_KEY"
-      android:value="@string/google_maps_key" />
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_key" />
+    <meta-data android:name="co.ronash.pushe.token" android:value="PUSHE_341417592856"/>
   </application>
 
 

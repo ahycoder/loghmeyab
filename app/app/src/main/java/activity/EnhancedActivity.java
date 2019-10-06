@@ -8,7 +8,7 @@ import ir.yousefi.restaurant.G;
 import utility.font.FontContextWrapper;
 
 
-public class ActivityEnhanced extends AppCompatActivity {
+public class EnhancedActivity extends AppCompatActivity {
 
 
   @Override
